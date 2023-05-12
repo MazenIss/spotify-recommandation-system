@@ -1,8 +1,11 @@
+import os
 from pymongo import MongoClient
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DoubleType
+from dotenv import load_dotenv
+
 
 # Define the MongoDB connection properties
-mongo_url= 'mongodb+srv://issaouimazen:issaouimazen@cluster0.xs49mxx.mongodb.net/?retryWrites=true&w=majority'
+mongo_url= os.getenv("DB_URI")
 mongo_collection= 'first'
 
 # Create a connection to MongoDB
